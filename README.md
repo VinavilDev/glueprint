@@ -90,32 +90,6 @@ Example:
 }
 ```
 
-## Project Structure
-
-```
-glueprint/
-├── glueprint/
-│   ├── core.py           # Scanner engine
-│   ├── models.py         # Data structures
-│   ├── fingerprints/
-│   │   ├── servers.py    # Web servers
-│   │   ├── frameworks.py # Backend frameworks
-│   │   ├── frontend.py   # Frontend frameworks
-│   │   ├── javascript.py # JS libraries
-│   │   ├── css.py        # CSS frameworks & icons
-│   │   ├── widgets.py    # Embeds & widgets
-│   │   ├── analytics.py  # Analytics & tracking
-│   │   ├── services.py   # APIs & services
-│   │   ├── meta.py       # SEO & meta tags
-│   │   ├── cdn.py        # CDN providers
-│   │   └── waf.py        # Web firewalls
-│   └── utils/
-│       ├── http.py       # HTTP client
-│       ├── matching.py   # Pattern matching
-│       └── output.py     # CLI formatting
-└── tests/
-```
-
 ## Requirements
 
 - Python 3.8+
