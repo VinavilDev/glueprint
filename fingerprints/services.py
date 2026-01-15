@@ -236,3 +236,70 @@ SERVICES = {
         "requires": 1,
     },
 }
+
+HOSTING = {
+    "Aruba.it": {
+        "headers": {"Server": r"Aruba"},
+        "body": [r"aruba\.it", r"arubacloud"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "OVH": {
+        "headers": {"Server": r"OVH"},
+        "body": [r"ovh\.com", r"ovhcloud"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "Hetzner": {
+        "body": [r"hetzner\.com", r"hetzner\.cloud"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "DigitalOcean": {
+        "body": [r"digitalocean\.com", r"digitaloceanspaces"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "Linode": {
+        "body": [r"linode\.com"],
+        "confidence": 82,
+        "requires": 1,
+    },
+    "Vultr": {
+        "body": [r"vultr\.com"],
+        "confidence": 82,
+        "requires": 1,
+    },
+    "GoDaddy": {
+        "body": [r"godaddy\.com", r"secureserver\.net"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "Bluehost": {
+        "body": [r"bluehost\.com"],
+        "confidence": 82,
+        "requires": 1,
+    },
+    "SiteGround": {
+        "body": [r"siteground\.com", r"sgvps\.net"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "WP Engine": {
+        "headers": {"X-Powered-By": r"WP Engine"},
+        "body": [r"wpengine\.com", r"wpe-"],
+        "confidence": 92,
+        "requires": 1,
+    },
+    "Kinsta": {
+        "headers": {"X-Kinsta-Cache": r".+"},
+        "body": [r"kinsta\.com", r"kinsta\.cloud"],
+        "confidence": 92,
+        "requires": 1,
+    },
+    "Pantheon": {
+        "headers": {"X-Pantheon-Styx-Hostname": r".+"},
+        "confidence": 95,
+        "requires": 1,
+    },
+}
