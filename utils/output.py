@@ -31,6 +31,7 @@ C = Colors
 CATEGORIES = {
     "servers": ("🖥️ ", "Web Server", C.BLUE),
     "languages": ("💻", "Language", C.PURPLE),
+    "databases": ("🗄️ ", "Database", C.YELLOW),
     "frameworks": ("⚙️ ", "Framework", C.PURPLE),
     "frontend": ("🎨", "Frontend", C.CYAN),
     "javascript": ("📦", "JavaScript", C.YELLOW),
@@ -38,7 +39,9 @@ CATEGORIES = {
     "widgets": ("🎵", "Widgets", C.GREEN),
     "analytics": ("📊", "Analytics", C.WHITE),
     "services": ("🔌", "Services", C.BLUE),
+    "hosting": ("☁️ ", "Hosting", C.CYAN),
     "meta": ("🏷️ ", "SEO/Meta", C.DIM),
+    "protocols": ("🔗", "Protocols", C.GREEN),
     "cdn": ("🌐", "CDN", C.CYAN),
     "waf": ("🛡️ ", "WAF", C.RED),
     "security": ("🔒", "Security", C.GREEN),
