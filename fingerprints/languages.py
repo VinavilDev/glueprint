@@ -55,3 +55,32 @@ LANGUAGES = {
         "requires": 1,
     },
 }
+
+DATABASES = {
+    "MySQL": {
+        "body": [r"mysql", r"mysqli", r"MySQL server", r"SQL syntax.*MySQL"],
+        "headers": {"X-Powered-By": r"MySQL"},
+        "confidence": 75,
+        "requires": 1,
+    },
+    "PostgreSQL": {
+        "body": [r"PostgreSQL", r"pg_", r"psycopg"],
+        "confidence": 75,
+        "requires": 1,
+    },
+    "MongoDB": {
+        "body": [r"mongodb", r"mongoose"],
+        "confidence": 75,
+        "requires": 1,
+    },
+    "Redis": {
+        "body": [r"redis"],
+        "confidence": 70,
+        "requires": 1,
+    },
+    "SQLite": {
+        "body": [r"sqlite", r"SQLite3"],
+        "confidence": 70,
+        "requires": 1,
+    },
+}
