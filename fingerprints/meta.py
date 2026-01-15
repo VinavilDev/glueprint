@@ -115,4 +115,22 @@ META = {
         "confidence": 82,
         "requires": 1,
     },
+    "Priority Hints": {
+        "body": [r'fetchpriority="', r'fetchpriority='],
+        "confidence": 85,
+        "requires": 1,
+    },
+}
+
+PROTOCOLS = {
+    "HTTP/3": {
+        "headers": {"Alt-Svc": r"h3=", "alt-svc": r"h3="},
+        "confidence": 95,
+        "requires": 1,
+    },
+    "HTTP/2": {
+        "headers": {"Alt-Svc": r"h2="},
+        "confidence": 90,
+        "requires": 1,
+    },
 }
