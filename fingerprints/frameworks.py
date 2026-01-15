@@ -265,4 +265,56 @@ FRAMEWORKS = {
         "confidence": 82,
         "requires": 1,
     },
+
+    # WordPress Plugins
+    "Elementor": {
+        "body": [r"elementor/assets/", r"elementor-[\d]+", r'class="elementor-', r"wp-content/plugins/elementor"],
+        "confidence": 95,
+        "requires": 1,
+    },
+    "ElementsKit": {
+        "body": [r"elementskit", r"wp-content/plugins/elementskit", r"ekit-"],
+        "confidence": 90,
+        "requires": 1,
+    },
+    "Yoast SEO": {
+        "body": [r"yoast-schema-graph", r"yoast\.com", r"wp-content/plugins/wordpress-seo", r"This site is optimized with the Yoast"],
+        "confidence": 95,
+        "requires": 1,
+    },
+    "Contact Form 7": {
+        "body": [r"contact-form-7", r"wpcf7", r"wp-content/plugins/contact-form-7"],
+        "confidence": 92,
+        "requires": 1,
+    },
+    "Complianz": {
+        "body": [r"complianz", r"cmplz-", r"wp-content/plugins/complianz", r"complianz-gdpr"],
+        "confidence": 92,
+        "requires": 1,
+    },
+    "WPForms": {
+        "body": [r"wpforms", r"wp-content/plugins/wpforms"],
+        "confidence": 90,
+        "requires": 1,
+    },
+    "Gravity Forms": {
+        "body": [r"gravityforms", r"gform_wrapper"],
+        "confidence": 90,
+        "requires": 1,
+    },
+    "Advanced Custom Fields": {
+        "body": [r"acf-", r"wp-content/plugins/advanced-custom-fields"],
+        "confidence": 88,
+        "requires": 1,
+    },
+    "WP Rocket": {
+        "body": [r"wp-rocket", r"rocket-loader"],
+        "confidence": 90,
+        "requires": 1,
+    },
+    "Wordfence": {
+        "body": [r"wordfence", r"wfwaf-"],
+        "confidence": 92,
+        "requires": 1,
+    },
 }
