@@ -631,4 +631,9 @@ JAVASCRIPT = {
         "confidence": 88,
         "requires": 1,
     },
+    "Twitter Emoji (Twemoji)": {
+        "body": [r"twemoji", r"twemoji\.maxcdn", r"twemoji\.js", r"cdn\.jsdelivr\.net/npm/@twemoji"],
+        "confidence": 92,
+        "requires": 1,
+    },
 }
