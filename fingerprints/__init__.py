@@ -10,6 +10,8 @@ from .services import SERVICES, HOSTING
 from .meta import META, PROTOCOLS
 from .cdn import CDN
 from .waf import WAF
+from .ecommerce import ECOMMERCE
+from .security_tools import SECURITY_TOOLS
 from .security import SECURITY_HEADERS, check_security
 
 
@@ -26,6 +28,8 @@ def load_all() -> dict:
         "analytics": ANALYTICS,
         "services": SERVICES,
         "hosting": HOSTING,
+        "ecommerce": ECOMMERCE,
+        "security_tools": SECURITY_TOOLS,
         "meta": META,
         "protocols": PROTOCOLS,
         "cdn": CDN,
