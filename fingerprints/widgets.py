@@ -29,7 +29,7 @@ WIDGETS = {
         "requires": 1,
     },
     "SoundCloud Embed": {
-        "body": [r"w\.soundcloud\.com/player", r"api\.soundcloud\.com"],
+        "body": [r"w\.soundcloud\.com/player", r"api\.soundcloud\.com", r"soundcloud\.com/tracks", r"soundcloud-widget"],
         "confidence": 95,
         "requires": 1,
     },
@@ -61,7 +61,7 @@ WIDGETS = {
 
     # Video
     "YouTube Embed": {
-        "body": [r"youtube\.com/embed", r"youtube-nocookie\.com/embed"],
+        "body": [r"youtube\.com/embed", r"youtube-nocookie\.com/embed", r"youtube\.com/iframe_api", r"ytplayer", r"YT\.Player", r"www\.youtube\.com/watch"],
         "confidence": 95,
         "requires": 1,
     },
@@ -96,7 +96,7 @@ WIDGETS = {
         "requires": 1,
     },
     "Twitter/X Embed": {
-        "body": [r"platform\.twitter\.com/widgets", r"twitter-tweet"],
+        "body": [r"platform\.twitter\.com", r"twitter-tweet", r"twitter-timeline", r"twitter-share-button", r"twitter\.com/intent"],
         "confidence": 95,
         "requires": 1,
     },
@@ -163,6 +163,28 @@ WIDGETS = {
     "Canva Embed": {
         "body": [r"canva\.com/design"],
         "confidence": 88,
+        "requires": 1,
+    },
+
+    # Shipping/Logistics
+    "UPS": {
+        "body": [r"ups\.com", r"ups\.js", r"UPS\.com", r"wwwapps\.ups\.com"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "FedEx": {
+        "body": [r"fedex\.com", r"FedEx"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "USPS": {
+        "body": [r"usps\.com", r"USPS"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "DHL": {
+        "body": [r"dhl\.com", r"DHL"],
+        "confidence": 85,
         "requires": 1,
     },
 }
