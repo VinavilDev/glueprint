@@ -317,4 +317,48 @@ FRAMEWORKS = {
         "confidence": 92,
         "requires": 1,
     },
+
+    # Forum Software
+    "MyBB": {
+        "body": [r"mybb", r"MyBB Group", r"/jscripts/general\.js", r"mybbgroup\.com", r'var\s+mybb_session'],
+        "cookies": [r"^mybb", r"^sid$"],
+        "confidence": 95,
+        "requires": 1,
+    },
+    "phpBB": {
+        "body": [r"phpBB", r"phpbb\.com", r"Powered by phpBB"],
+        "cookies": [r"^phpbb"],
+        "confidence": 92,
+        "requires": 1,
+    },
+    "vBulletin": {
+        "body": [r"vBulletin", r"vbulletin", r"vBulletin Solutions"],
+        "confidence": 92,
+        "requires": 1,
+    },
+    "XenForo": {
+        "body": [r"XenForo", r"xenforo\.com", r"xf-"],
+        "confidence": 92,
+        "requires": 1,
+    },
+    "Discourse": {
+        "body": [r"discourse", r"Discourse\."],
+        "confidence": 88,
+        "requires": 1,
+    },
+    "Flarum": {
+        "body": [r"flarum", r"flarum\.org"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "IPB/Invision": {
+        "body": [r"invisioncommunity\.com", r"ipb\.css", r"ips_"],
+        "confidence": 88,
+        "requires": 1,
+    },
+    "Simple Machines Forum": {
+        "body": [r"simplemachines\.org", r"SMF"],
+        "confidence": 85,
+        "requires": 1,
+    },
 }
