@@ -1,101 +1,170 @@
-# GluePrint
+<h1 align="center">GluePrint - Web Technology Fingerprinting</h1>
 
-A fast, accurate web technology fingerprinting tool built for security professionals.
+<p align="center">
+  <img src="https://img.shields.io/badge/technologies-600+-blue" alt="technologies" />
+  <img src="https://img.shields.io/badge/python-3.8+-green" alt="python" />
+  <img src="https://img.shields.io/badge/license-MIT-orange" alt="license" />
+  <br>
+  <em>GluePrint is a web technology fingerprinting tool for security researchers
+    <br> and penetration testers. Detect 600+ technologies from a single scan.</em>
+  <br>
+</p>
 
-Identifies servers, frameworks, JavaScript libraries, analytics, widgets, and more by analyzing HTTP responses and page content.
+<p align="center">
+  <a href="#installation"><strong>Installation</strong></a>
+  ·
+  <a href="#usage"><strong>Usage</strong></a>
+  ·
+  <a href="#detection-categories"><strong>Categories</strong></a>
+  ·
+  <a href="#contributing"><strong>Contributing</strong></a>
+</p>
 
-## Quick Start
+<hr>
+
+## Documentation
+
+- [Installation](#installation)
+- [CLI Usage](#cli)
+- [Library Usage](#library)
+- [Detection Categories](#detection-categories)
+- [Adding Fingerprints](#adding-fingerprints)
+
+### Advanced
+
+- [Deep Scan Mode](#deep-scan)
+- [Custom Headers](#custom-headers)
+- [JSON Export](#json-export)
+
+## Installation
+
+### Prerequisites
+
+- Python 3.8+
+- pip
+
+### Setup
 
 ```bash
-git clone https://github.com/yourusername/glueprint.git
+git clone https://github.com/VinavilDev/glueprint.git
 cd glueprint
 pip install -r requirements.txt
-
-python -m glueprint -u https://example.com
-python -m glueprint -u https://example.com --deep --verbose
 ```
-
-## What It Detects
-
-| Category | Examples |
-|----------|----------|
-| Servers | Apache, nginx, IIS, LiteSpeed, Caddy |
-| Languages | PHP, Python, Ruby, Node.js |
-| Frameworks | Laravel, Django, Rails, Express, Next.js |
-| Frontend | React, Vue, Angular, Svelte, Preact |
-| JS Libraries | jQuery, GSAP, Anime.js, Swiper, Three.js |
-| CSS | Bootstrap, Tailwind, Bulma, Font Awesome |
-| Widgets | Spotify, SoundCloud, YouTube, Tidal, ReadSpeaker |
-| Analytics | GA4, Matomo, Hotjar, Siteimprove, Plausible |
-| CDN/WAF | Cloudflare, Fastly, Akamai, AWS |
-| SEO | Open Graph, Twitter Cards, Schema.org, RSS |
 
 ## Usage
 
+### CLI
+
 ```bash
 # Basic scan
-python -m glueprint -u https://target.com
+python __main__.py -u https://example.com
 
-# Deep scan with WAF probing
-python -m glueprint -u https://target.com --deep
-
-# Verbose output showing evidence
-python -m glueprint -u https://target.com -v
+# Deep scan with evidence
+python __main__.py -u https://example.com --deep --verbose
 
 # JSON output
-python -m glueprint -u https://target.com --json
-
-# Save results
-python -m glueprint -u https://target.com -o results.json
+python __main__.py -u https://example.com --json -o report.json
 
 # Custom headers
-python -m glueprint -u https://target.com -H "Authorization: Bearer token"
+python __main__.py -u https://example.com -H "Authorization: Bearer token"
 ```
 
-## As a Library
+### Library
 
 ```python
-from glueprint import GluePrint
+from core import GluePrint
 
-scanner = GluePrint("https://target.com")
+scanner = GluePrint("https://example.com")
 result = scanner.scan(deep=True)
 
 for tech in result.detections:
     print(f"{tech.name}: {tech.confidence}%")
 
-# Export
-data = scanner.to_dict()
-json_str = scanner.to_json()
+# Check specific technology
+if result.has("WordPress"):
+    print("WordPress detected")
+
+# Filter by category
+wafs = result.by_category("waf")
+
+# Export to JSON
+data = scanner.to_json()
 ```
+
+## Detection Categories
+
+| Category | Technologies | Examples |
+|----------|-------------|----------|
+| **Web Servers** | 20+ | Apache, nginx, IIS, LiteSpeed, Caddy |
+| **Languages** | 10+ | PHP, Python, Ruby, Node.js, ASP.NET |
+| **Databases** | 5+ | MySQL, PostgreSQL, MongoDB, Redis |
+| **Frameworks** | 60+ | Laravel, Django, Rails, Next.js, WordPress |
+| **Frontend** | 20+ | React, Vue, Angular, Svelte, HTMX |
+| **JavaScript** | 200+ | jQuery, GSAP, Chart.js, Three.js, Socket.io |
+| **CSS/Icons** | 50+ | Tailwind, Bootstrap, Font Awesome |
+| **Analytics** | 60+ | Google Analytics, Matomo, Hotjar, Mixpanel |
+| **E-commerce** | 110+ | Shopify, WooCommerce, Stripe, PayPal, Klarna |
+| **Security** | 70+ | reCAPTCHA, Auth0, Sentry, Cloudflare Turnstile |
+| **Widgets** | 40+ | YouTube, SoundCloud, Disqus, Twitter |
+| **Services** | 60+ | Google Fonts, Algolia, Firebase, Twilio |
+| **Hosting** | 15+ | Aruba, OVH, WP Engine, Vercel, Netlify |
+| **CDN** | 17+ | Cloudflare, AWS CloudFront, Fastly, Akamai |
+| **WAF** | 12+ | Cloudflare WAF, AWS WAF, ModSecurity |
+
+## Features
+
+- **Header Analysis** - Server, X-Powered-By, cookies
+- **Body Pattern Matching** - Scripts, styles, meta tags
+- **Version Extraction** - Automatic version detection
+- **Confidence Scoring** - Evidence-based scoring system
+- **Security Audit** - HSTS, CSP, X-Frame-Options
+- **Deep Scan** - WAF triggering, path probing
+- **JSON Export** - Automation-friendly output
 
 ## Adding Fingerprints
 
-Each fingerprint supports:
-
-- `headers` - HTTP header patterns
-- `cookies` - Cookie name patterns  
-- `body` - HTML/JS content patterns
-- `confidence` - Base confidence score (0-100)
-- `requires` - Minimum matches needed
-
-Example:
+Add patterns to the appropriate file in `fingerprints/`:
 
 ```python
-"MyFramework": {
-    "headers": {"X-Powered-By": r"^MyFramework"},
-    "cookies": [r"^myfw_session$"],
-    "body": [r"myframework\.js", r"MyFramework\.init"],
-    "confidence": 85,
-    "requires": 1
-}
+"Technology Name": {
+    "headers": {"Header-Name": r"pattern"},
+    "cookies": [r"cookie_pattern"],
+    "body": [r"body_pattern_1", r"body_pattern_2"],
+    "confidence": 90,
+    "requires": 1,
+},
 ```
 
-## Requirements
+## CLI Options
 
-- Python 3.8+
-- requests
-- pyfiglet
+| Flag | Description |
+|------|-------------|
+| `-u, --url` | Target URL |
+| `-d, --deep` | Deep scan mode |
+| `-v, --verbose` | Show evidence |
+| `-j, --json` | JSON output |
+| `-o, --output` | Save to file |
+| `-t, --timeout` | Request timeout |
+| `--no-verify` | Skip SSL verification |
+| `-H, --header` | Custom header |
+| `-c, --cookie` | Custom cookie |
 
-## License
+## Contributing
 
-MIT
+### Want to Help?
+
+Read through our contributing guidelines and then check out issues labeled as <kbd>help wanted</kbd> or <kbd>good first issue</kbd>.
+
+### Adding Technologies
+
+1. Fork the repository
+2. Add fingerprint patterns to the appropriate category file in `fingerprints/`
+3. Test detection accuracy
+4. Submit a pull request
+
+## Community
+
+- [Submit an Issue](https://github.com/VinavilDev/glueprint/issues)
+- [Discussions](https://github.com/VinavilDev/glueprint/discussions)
+
+**Find GluePrint useful? Give the repo a star ⭐**
