@@ -243,7 +243,12 @@ ANALYTICS = {
 
     # Ads
     "Google Ads": {
-        "body": [r"googleads\.g\.doubleclick\.net", r"AW-\d+"],
+        "body": [r"googleads\.g\.doubleclick\.net", r"AW-\d+", r"google_conversion", r"googleadservices\.com"],
+        "confidence": 92,
+        "requires": 1,
+    },
+    "Google Ads Conversion Tracking": {
+        "body": [r"googleadservices\.com/pagead/conversion", r"google_conversion_id", r"gtag.*conversion", r"AW-\d+/"],
         "confidence": 92,
         "requires": 1,
     },
@@ -280,6 +285,16 @@ ANALYTICS = {
     "Criteo": {
         "body": [r"static\.criteo\.net"],
         "confidence": 88,
+        "requires": 1,
+    },
+    "Cloudflare Browser Insights": {
+        "body": [r"cloudflareinsights\.com", r"beacon\.min\.js", r"static\.cloudflareinsights\.com"],
+        "confidence": 95,
+        "requires": 1,
+    },
+    "Cloudflare Web Analytics": {
+        "body": [r"cloudflareinsights\.com", r"cf-beacon"],
+        "confidence": 92,
         "requires": 1,
     },
 }
