@@ -30,6 +30,7 @@ LANGUAGES = {
     },
     "Node.js": {
         "headers": {"X-Powered-By": r"^Express$"},
+        "body": [r"node_modules", r"nodejs\.org"],
         "confidence": 85,
         "requires": 1,
     },
