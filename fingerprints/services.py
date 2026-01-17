@@ -1,7 +1,12 @@
 SERVICES = {
     # Fonts
     "Google Fonts": {
-        "body": [r"fonts\.googleapis\.com", r"fonts\.gstatic\.com"],
+        "body": [r"fonts\.googleapis\.com", r"fonts\.gstatic\.com", r"Google Font API"],
+        "confidence": 95,
+        "requires": 1,
+    },
+    "Google Font API": {
+        "body": [r"fonts\.googleapis\.com/css", r"fonts\.gstatic\.com/s/"],
         "confidence": 95,
         "requires": 1,
     },
