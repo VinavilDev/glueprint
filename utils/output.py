@@ -40,11 +40,13 @@ CATEGORIES = {
     "analytics": ("📊", "Analytics", C.WHITE),
     "services": ("🔌", "Services", C.BLUE),
     "hosting": ("☁️ ", "Hosting", C.CYAN),
+    "ecommerce": ("🛒", "E-commerce", C.GREEN),
+    "security_tools": ("🔐", "Security", C.RED),
     "meta": ("🏷️ ", "SEO/Meta", C.DIM),
     "protocols": ("🔗", "Protocols", C.GREEN),
     "cdn": ("🌐", "CDN", C.CYAN),
     "waf": ("🛡️ ", "WAF", C.RED),
-    "security": ("🔒", "Security", C.GREEN),
+    "security": ("🔒", "Headers", C.GREEN),
 }
 
 
