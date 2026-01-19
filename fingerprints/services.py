@@ -308,3 +308,156 @@ HOSTING = {
         "requires": 1,
     },
 }
+
+COMMUNICATION = {
+    "Twilio": {
+        "body": [r"twilio\.com"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "SendBird": {
+        "body": [r"sendbird\.com"],
+        "confidence": 82,
+        "requires": 1,
+    },
+    "Stream": {
+        "body": [r"getstream\.io", r"stream-chat"],
+        "confidence": 82,
+        "requires": 1,
+    },
+    "Vonage": {
+        "body": [r"vonage\.com", r"nexmo\.com"],
+        "confidence": 80,
+        "requires": 1,
+    },
+    "Plivo": {
+        "body": [r"plivo\.com"],
+        "confidence": 78,
+        "requires": 1,
+    },
+    "MessageBird": {
+        "body": [r"messagebird\.com"],
+        "confidence": 78,
+        "requires": 1,
+    },
+    "Sinch": {
+        "body": [r"sinch\.com"],
+        "confidence": 75,
+        "requires": 1,
+    },
+    "Agora": {
+        "body": [r"agora\.io"],
+        "confidence": 82,
+        "requires": 1,
+    },
+    "Daily": {
+        "body": [r"daily\.co"],
+        "confidence": 78,
+        "requires": 1,
+    },
+    "Whereby": {
+        "body": [r"whereby\.com"],
+        "confidence": 80,
+        "requires": 1,
+    },
+    "Jitsi": {
+        "body": [r"jitsi\.org", r"meet\.jit\.si"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "Zoom SDK": {
+        "body": [r"zoom\.us/.*sdk"],
+        "confidence": 82,
+        "requires": 1,
+    },
+    "100ms": {
+        "body": [r"100ms\.live"],
+        "confidence": 78,
+        "requires": 1,
+    },
+    "Livekit": {
+        "body": [r"livekit\.io"],
+        "confidence": 75,
+        "requires": 1,
+    },
+    "Dolby.io": {
+        "body": [r"dolby\.io"],
+        "confidence": 75,
+        "requires": 1,
+    },
+    "OpenTok": {
+        "body": [r"opentok\.com", r"tokbox\.com"],
+        "confidence": 78,
+        "requires": 1,
+    },
+    "Amazon Chime": {
+        "body": [r"chime\.aws"],
+        "confidence": 78,
+        "requires": 1,
+    },
+    "Webex SDK": {
+        "body": [r"webex\.com/.*sdk"],
+        "confidence": 75,
+        "requires": 1,
+    },
+    "Teams SDK": {
+        "body": [r"teams\.microsoft\.com.*sdk"],
+        "confidence": 75,
+        "requires": 1,
+    },
+    "Miro": {
+        "body": [r"miro\.com"],
+        "confidence": 82,
+        "requires": 1,
+    },
+    "Figma Embed": {
+        "body": [r"figma\.com/embed"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "Lucid": {
+        "body": [r"lucid\.app"],
+        "confidence": 78,
+        "requires": 1,
+    },
+    "Whimsical": {
+        "body": [r"whimsical\.com"],
+        "confidence": 78,
+        "requires": 1,
+    },
+    "Excalidraw": {
+        "body": [r"excalidraw\.com"],
+        "confidence": 78,
+        "requires": 1,
+    },
+    "Loom Embed": {
+        "body": [r"loom\.com/embed"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "Calendly Embed": {
+        "body": [r"calendly\.com/.*embed"],
+        "confidence": 88,
+        "requires": 1,
+    },
+    "Cal.com Embed": {
+        "body": [r"cal\.com/.*embed"],
+        "confidence": 82,
+        "requires": 1,
+    },
+    "Typeform Embed": {
+        "body": [r"typeform\.com/to/"],
+        "confidence": 88,
+        "requires": 1,
+    },
+    "Airtable Embed": {
+        "body": [r"airtable\.com/embed"],
+        "confidence": 85,
+        "requires": 1,
+    },
+    "Notion Embed": {
+        "body": [r"notion\.so/.*embed"],
+        "confidence": 82,
+        "requires": 1,
+    },
+}
